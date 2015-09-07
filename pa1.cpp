@@ -6,18 +6,53 @@
 #include "Point.h"
 #include <iomanip>
 using namespace std;
-
+        //function prototypes
 double computeArea(Point &a, Point &b, Point &c);
+
 int main(void) {
+    double input;
+    Point a(0,0,0), b(0,0,0), c(0,0,0);        //initializes points a,b, and c
+        //Iterates through loop to prompt user to enter point coordinates
+    for(int n = 0; n < 3; n++)
+    {
+        cout << "Please enter the x,y and z coordinates respectivly for point a" << endl;
+        cin >> input;
+        if(n == 0)
+            a.setX(input);
+        if(n == 1)
+            a.setY(input);
+        if(n == 2)
+            a.setZ(input);
+    }
+    for(int n = 0; n < 3; n++)
+    {
+        cout << "Please enter the x,y and z coordinates respectivly for point b" << endl;
+        cin >> input;
+        if(n == 0)
+            b.setX(input);
+        if(n == 1)
+            b.setY(input);
+        if(n == 2)
+            b.setZ(input);
+    }
+    for(int n = 0; n < 3; n++)
+    {
+        cout << "Please enter the x,y and z coordinates respectivly for point c" << endl;
+        cin >> input;
+        if(n == 0)
+            c.setX(input);
+        if(n == 1)
+            c.setY(input);
+        if(n == 2)
+            c.setZ(input);
+    }
 
-
-    Point a(0,2,4), b(0,2,4), c(1,3,2);        //declares points a,b, and c
-
+        //outputs the area of the triangle created by the 3 points
     cout << fixed << setprecision(2) << "The area of the triangle is: " << computeArea(a, b, c);
-
+    cin >> input;
     return 0;
 }
-
+    //computes the area of the triangle formed by 3 points.
 double computeArea(Point &a, Point &b, Point &c){
     double ab = a.distanceTo(b);            //uses distanceTo function of point to calculate distances of triangle
     double bc = b.distanceTo(c);
@@ -25,5 +60,3 @@ double computeArea(Point &a, Point &b, Point &c){
     return .25*(sqrt((ab+bc+ca)*(bc+ca-ab)*(ab-bc+ca)*(ab+bc-ca))); //uses Heron's Formula to calculate area of triangle
 
 }
-// Computes the area of the triangle created by 3 points.
-
