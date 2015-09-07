@@ -12,10 +12,12 @@ double computeArea(Point &a, Point &b, Point &c);
 int main(void) {
     double input;
     Point a(0,0,0), b(0,0,0), c(0,0,0);        //initializes points a,b, and c
+
         //Iterates through loop to prompt user to enter point coordinates
+    cout << "Please enter the x,y and z coordinates respectivly for point a" << endl;
     for(int n = 0; n < 3; n++)
     {
-        cout << "Please enter the x,y and z coordinates respectivly for point a" << endl;
+
         cin >> input;
         if(n == 0)
             a.setX(input);
@@ -24,9 +26,10 @@ int main(void) {
         if(n == 2)
             a.setZ(input);
     }
+    cout << "Please enter the x,y and z coordinates respectivly for point b" << endl;
     for(int n = 0; n < 3; n++)
     {
-        cout << "Please enter the x,y and z coordinates respectivly for point b" << endl;
+
         cin >> input;
         if(n == 0)
             b.setX(input);
@@ -35,9 +38,9 @@ int main(void) {
         if(n == 2)
             b.setZ(input);
     }
+    cout << "Please enter the x,y and z coordinates respectivly for point c" << endl;
     for(int n = 0; n < 3; n++)
     {
-        cout << "Please enter the x,y and z coordinates respectivly for point c" << endl;
         cin >> input;
         if(n == 0)
             c.setX(input);
@@ -52,7 +55,7 @@ int main(void) {
     cin >> input;
     return 0;
 }
-    //computes the area of the triangle formed by 3 points.
+
 double computeArea(Point &a, Point &b, Point &c){
     double ab = a.distanceTo(b);            //uses distanceTo function of point to calculate distances of triangle
     double bc = b.distanceTo(c);
